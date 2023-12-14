@@ -5,11 +5,11 @@ function createPerson(name){
         console.log(`Hi! I'm ${this.name}.`);
     }
 }
-const salva = createPerson("Salva");
+// const salva = createPerson("Salva");
 salva.name;
 salva.introducSelf();
 
-const frankie= createPerson("Frankie");
+// const frankie= createPerson("Frankie");
 frankie.name;
 frankie.introducSelf();
 

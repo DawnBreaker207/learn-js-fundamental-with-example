@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="demodiv">
+        <p>This is text</p>
+    </div>
+  </body>
+  <script>
+    const demodiv = document.getElementById("demodiv");
+    const parent = demodiv.parentNode;
+    const child = demodiv.childNodes;
+
+    const type = parent.nodeName;
+
+    console.log(parent);
+    console.log(child);
+    console.log(type);
+    let outputString = "";
+
+    if (demodiv.hasChildNodes()) {
+      const children = demodiv.childNodes;
+      children.forEach((child) => {
+        outputString += `has child ${child.nodeName} ,`;
+      });
+    }
+    console.log(outputString);
+  </script>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <h1>Adding Up Values in an HTML Table</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Column 1</th>
+        <th>Column 2</th>
+        <th>Column 3</th>
+        <th>Column 4</th>
+        <th>Column 5</th>
+      </tr>
+    </thead>
+    <tbody id="table1">
+        <tr>
+        <tr>  
+              <td>1</td>   
+              <td>2</td>      
+              <td>3</td> 
+              <td>4</td>
+              <td>5</td>      
+        </tr>
+        <tr>  
+              <td>1</td>   
+              <td>2</td>      
+              <td>3</td> 
+              <td>4</td>
+              <td>5</td>      
+        </tr>
+        <tr>  
+              <td>1</td>   
+              <td>2</td>      
+              <td>3</td> 
+              <td>4</td>
+              <td>5</td>      
+        </tr>
+    </tr>
+    </tbody>
+  </table>
+  <body>
+    <!-- Add Up Values -->
+    <!-- Using ForEach -->
+    <script type="">
+      let sum = 0;
+      <!-- Take a first column -->
+      const cells = document.querySelectorAll("td:nth-of-type(1)");
+      <!-- Caculated Totel of the first column -->
+      cells.forEach((cell) => {
+        sum += Number.parseFloat(cell.firstChild.data);
+      });
+    <!--Create new row-->
+      const newRow= document.createElement('tr');
+
+      <!-- Create 1st Column -->
+      const firstCell= document.createElement('td');
+      const firstCellText= document.createTextNode('Sum:');
+      firstCell.appendChild(firstCellText);
+      newRow.appendChild(firstCell);
+
+      <!-- Create 2nd Column -->
+      const secondCell= document.createElement('td');
+      const secondCellText= document.createTextNode(sum);
+      secondCell.appendChild(secondCellText);
+      newRow.appendChild(secondCell);
+      
+      <!-- Add new row to table -->
+      document.getElementById('table1').appendChild(newRow);
+
+    </script>
+    <!-- Using for loop -->
+    <!-- <script type="">
+        
+        let sum = 0;
+        let cells= document.querySelectorAll("td:nth-of-type(2)");
+
+        for(var i=0; i <cells.length ; i++){
+            sum+=parseFloat(cells[i].firstChild.data);
+        }
+    </script> -->
+
+   
+  
+  </body>
+</html>

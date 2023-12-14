@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="click-button">Click</button>
+    <a href="" id="click-link">Click</a>
+
+    <div id="click-div" role="button" tabindex="0">Click me</div>
+    <!-- Button Click -->
+    <!-- <script>
+        const clickHandler = (event) =>{
+            window.alert('The element has been clicked!');
+        };
+
+        const btn = document.getElementById('click-button');
+        btn.addEventListener('click',clickHandler); -->
+    <!-- </script> -->
+
+    <!-- Link click -->
+    <!-- <script>
+      const clickHandler = (event) => {
+        event.preventDefault();
+        window.alert(`The ${event.currentTarget.nodename} element has been clicked!`);
+      };
+
+      const href = document.getElementById("click-link");
+      href.addEventListener("click", clickHandler);
+    </script> -->
+    <script>
+      const clickHandler = (event) => {
+        event.preventDefault();
+        window.alert(
+          `The ${event.currentTarget.nodename} element has been clicked!`
+        );
+      };
+
+      const clickableDiv = document.getElementById("click-div");
+      clickableDiv.addEventListener("click", clickHandler);
+
+      clickableDiv.addEventListener("keydown", (event) => {
+        if (event.code === "Space" || event.code === "Enter") {
+          clickableDiv.click();
+        }
+      });
+    </script>
+  </body>
+</html>

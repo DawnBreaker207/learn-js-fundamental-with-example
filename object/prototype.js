@@ -18,11 +18,11 @@ do{
 }while(object);
 
 
-const personPrototype = {
-    greet(){
-        console.log("Hello");
-    },
-};
+// const personPrototype = {
+//     greet(){
+//         console.log("Hello");
+//     },
+// };
 
 const carl = Object.create(personPrototype);
 carl.greet();

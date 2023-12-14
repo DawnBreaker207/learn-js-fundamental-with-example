@@ -33,12 +33,12 @@ class Professor extends Person {
 
     introducSelf(){
         console.log(
-            `My name is ${this.name}, and I will be you ${this.teaches} professor.`;
+            `My name is ${this.name}, and I will be you ${this.teaches} professor.`
         );
     }
-}
+};
 
-grade(paper){
+ grade(paper){
     const grade = Math.floor(Math.random() * (5-1) +1 );
     console.log(grade);
 }
@@ -50,28 +50,31 @@ walsh.grade("My paper");
 
 
 // Encapsulation
-class Student extends Person {
-    #year;
 
-    constructor(name, year){
-        super(name);
-        this.#year = year;
-    }
+// class Student extends Person {
 
-    introducSelf(){
-        console.log(`Hi! I'm ${this.name}, and I'm in year ${this.#year}.`);
-    }
+//      Use # before to create private object and methods 
+//     #year;
 
-    canStudyArchery(){
-        return this.#year > 1;
-    }
-}
+//     constructor(name, year){
+//         super(name);
+//         this.#year = year;
+//     }
 
-const summers = new Student ("Summers", 2);
-summers.introducSelf();
-summers.introducSelf();
+//     introducSelf(){
+//         console.log(`Hi! I'm ${this.name}, and I'm in year ${this.#year}.`);
+//     }
 
-summers.#year;
+//     canStudyArchery(){
+//         return this.#year > 1;
+//     }
+// }
+
+// const summers = new Student ("Summers", 2);
+// summers.introducSelf();
+// summers.introducSelf();
+
+// summers.#year;
 
 
 // Private methods

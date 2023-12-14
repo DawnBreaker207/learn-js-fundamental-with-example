@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      main {
+        width: 25rem;
+        margin: auto;
+        font-family: sans-serif;
+        text-align: center;
+      }
+      h1 {
+        font-size: 3rem;
+      }
+      .input-block {
+        margin: 50px 0;
+      }
+      #input-text {
+        padding: 10px 25px 10px 10px;
+      }
+      #submit-button,#clear-button {
+        padding: 10px 25px;
+      }
+      .block-style {
+        display: inline-grid;
+        align-items: center;
+        justify-content: space-evenly;
+        grid-auto-flow: column;
+        grid-auto-columns: 50px 16rem 90px;
+        gap: 20px;
+        overflow-wrap: break-word;
+      }
+      .text-style {
+        color: rgba(255, 0, 0, 0.742);
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+      .button-style {
+        padding: 10px 20px;
+        background-color: white;
+        border: 1px solid black;
+        font-family: sans-serif;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+      .list-show {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>To do list</h1>
+      <div class="input-block">
+        <input type="text" name="" id="input-text" placeholder="Type" />
+        <button type="submit" id="submit-button">Submit</button>
+        <button type="submit" id="clear-button">Clear</button>
+        <div class="list-show" id="list-show"></div>
+      </div>
+    </main>
+  </body>
+  <script src="function.js"></script>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        td,th{
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+        tr:nth-child(2n+1){
+            background-color: #eeffee;
+        }
+    </style>
+</head>
+<body>
+    <h1>Delete Values in an HTML Table</h1>
+    <table id="mixed">
+      <thead>
+        <tr>
+          <th>Column 1</th>
+          <th>Column 2</th>
+          <th>Column 3</th>
+          <th>Column 4</th>
+          <th>Column 5</th>
+        </tr>
+      </thead>
+      <tbody id="result">
+        
+      </tr>
+      </tbody>
+    </table>
+    <div id="result"></div>
+    <script>
+        const values = new Array(3);
+        values[0]=[123.45, 'aaple',true];
+        values[1]=[65, 'banana', false];
+        values[2]=[1034.99, 'cherry',false];
+
+
+        const mixed= document.getElementById('mixed');
+        const tbody = document.createElement('tbody');
+
+        function pruneRow(){
+            const parent = this.parentNode;
+            const oldRow= parent.removeChild(this);
+
+            let dataString = '';
+            oldRow.childNodes.forEach(row => {
+                dataString += `${row.firstChild.data}`;
+                
+            });
+            const msg = document.createTextNode(`removed ${dataString}`);
+            const p = document.createElement('p');
+            p.appendChild(msg);
+            document.getElementById('result').appendChild(p);
+        }
+
+
+
+            values.forEach(value =>{
+                const tr= document.createElement('tr');
+
+
+                value.forEach( cell =>{
+                    const td= document.createElement('td');
+                    const txt = document.createTextNode(cell);
+                    td.appendChild(txt);
+                    tr.appendChild(td);
+                });
+
+
+                tr.onclick = pruneRow;
+
+                tbody.appendChild(tr);
+                mixed.appendChild(tbody);
+            });
+        
+    </script>
+</body>
+</html>
